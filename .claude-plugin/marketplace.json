@@ -1,0 +1,18 @@
+{
+  "name": "geo-datasync-fi",
+  "description": "Tooling for working with Finnish open geospatial data.",
+  "owner": {
+    "name": "akaihola"
+  },
+  "plugins": [
+    {
+      "name": "fi-open-geodata",
+      "source": "./.claude/skills/fi-open-geodata",
+      "description": "Make Finnish open data spatially interoperable: CRS detection and correction, conversion to EUREF-FIN / ETRS-TM35FIN (EPSG:3067), join-key normalisation against National Land Survey and Statistics Finland reference layers, address geocoding, and INSPIRE ISO 19139 metadata.",
+      "version": "1.0.0",
+      "author": {
+        "name": "akaihola"
+      }
+    }
+  ]
+}

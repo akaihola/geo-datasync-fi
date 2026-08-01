@@ -1,0 +1,23 @@
+{
+  "name": "fi-open-geodata",
+  "displayName": "Finnish Open Geodata Interoperability",
+  "version": "1.0.0",
+  "description": "Make Finnish open data spatially interoperable: detect and correct the CRS, convert to EUREF-FIN / ETRS-TM35FIN (EPSG:3067), normalise join keys against National Land Survey and Statistics Finland reference layers, geocode Finnish addresses, and generate INSPIRE ISO 19139 metadata.",
+  "author": {
+    "name": "akaihola",
+    "url": "https://github.com/akaihola"
+  },
+  "homepage": "https://github.com/akaihola/geo-datasync-fi",
+  "repository": "https://github.com/akaihola/geo-datasync-fi",
+  "keywords": [
+    "paikkatieto",
+    "avoindata",
+    "finland",
+    "gis",
+    "epsg-3067",
+    "etrs-tm35fin",
+    "inspire",
+    "geocoding",
+    "maanmittauslaitos"
+  ]
+}

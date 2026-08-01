@@ -29,10 +29,41 @@ So the skill infers from coordinate magnitudes rather than from labels, scores
 the declared CRS instead of trusting it, and stops and asks when it is not
 confident rather than emitting something plausible.
 
+## Install
+
+The skill is packaged as a single-skill plugin, which can be installed three ways.
+
+**claude.ai** — Settings → Capabilities → Skills → upload `dist/fi-open-geodata.skill`.
+Rebuild that file at any time with:
+
+```bash
+python tools/package_skill.py        # stdlib only, no dependencies
+```
+
+Note that claude.ai's sandbox does not have geopandas available, so on claude.ai
+the skill contributes its knowledge — CRS ranges, join-key formats, the workflow,
+the reference material — rather than running the pipeline scripts end to end. For
+the full conversion pipeline, use Claude Code.
+
+**Claude Code, as a plugin** — from a clone of this repo:
+
+```bash
+/plugin marketplace add akaihola/geo-datasync-fi
+/plugin install fi-open-geodata@geo-datasync-fi
+/reload-plugins
+```
+
+**Claude Code, as a plain skill** — copy `.claude/skills/fi-open-geodata/` into
+your project's `.claude/skills/` or into `~/.claude/skills/`. Working in this
+repo needs no install at all; the skill is already in place.
+
 ## Layout
 
 ```
+.claude-plugin/marketplace.json   plugin marketplace entry
+tools/package_skill.py            builds dist/fi-open-geodata.skill
 .claude/skills/fi-open-geodata/
+├── .claude-plugin/plugin.json   plugin manifest
 ├── SKILL.md                     the workflow
 ├── requirements.txt
 ├── scripts/
