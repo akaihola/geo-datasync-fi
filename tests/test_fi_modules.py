@@ -10,7 +10,7 @@ Run: python -m pytest tests/ -q   (or: python tests/test_fi_modules.py)
 import sys
 from pathlib import Path
 
-SKILL = Path(__file__).resolve().parents[1] / ".claude/skills/fi-open-geodata/scripts"
+SKILL = Path(__file__).resolve().parents[1] / "skills/fi-open-geodata/scripts"
 sys.path.insert(0, str(SKILL))
 
 import fi_common  # noqa: E402

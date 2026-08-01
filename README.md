@@ -31,39 +31,39 @@ confident rather than emitting something plausible.
 
 ## Install
 
-The skill is packaged as a single-skill plugin, which can be installed three ways.
+The repository is the plugin: `.claude-plugin/plugin.json` at the root, skills
+under `skills/`. It ships one skill, `fi-open-geodata`, which appears once
+installed as `geo-datasync-fi:fi-open-geodata`.
 
-**claude.ai** — Settings → Capabilities → Skills → upload `dist/fi-open-geodata.skill`.
-Rebuild that file at any time with:
-
-```bash
-python tools/package_skill.py        # stdlib only, no dependencies
-```
-
-Note that claude.ai's sandbox does not have geopandas available, so on claude.ai
-the skill contributes its knowledge — CRS ranges, join-key formats, the workflow,
-the reference material — rather than running the pipeline scripts end to end. For
-the full conversion pipeline, use Claude Code.
-
-**Claude Code, as a plugin** — from a clone of this repo:
+**Upload** — build the bundle and upload it via **Plugins → Add → Upload plugin**:
 
 ```bash
-/plugin marketplace add akaihola/geo-datasync-fi
-/plugin install fi-open-geodata@geo-datasync-fi
-/reload-plugins
+python tools/package_plugin.py       # -> dist/geo-datasync-fi.zip, stdlib only
 ```
 
-**Claude Code, as a plain skill** — copy `.claude/skills/fi-open-geodata/` into
-your project's `.claude/skills/` or into `~/.claude/skills/`. Working in this
-repo needs no install at all; the skill is already in place.
+The archive wraps everything in one `geo-datasync-fi/` folder. If the uploader
+wants the manifest at the archive root instead, rebuild with `--flat`.
+
+**Local checkout** — point Claude Code straight at a clone, no install step:
+
+```bash
+claude --plugin-dir /path/to/geo-datasync-fi
+```
+
+**As a plain skill** — copy `skills/fi-open-geodata/` into your project's
+`.claude/skills/` or into `~/.claude/skills/`.
+
+Note that the pipeline scripts need geopandas and pyproj. Where those are not
+available the skill still contributes its knowledge — CRS ranges, join-key
+formats, the workflow, the reference material — but cannot run the conversion end
+to end.
 
 ## Layout
 
 ```
-.claude-plugin/marketplace.json   plugin marketplace entry
-tools/package_skill.py            builds dist/fi-open-geodata.skill
-.claude/skills/fi-open-geodata/
-├── .claude-plugin/plugin.json   plugin manifest
+.claude-plugin/plugin.json       plugin manifest
+tools/package_plugin.py          builds dist/geo-datasync-fi.zip
+skills/fi-open-geodata/
 ├── SKILL.md                     the workflow
 ├── requirements.txt
 ├── scripts/
@@ -98,10 +98,10 @@ conversion path and the accuracy you can honestly claim.
 ## Usage
 
 ```bash
-pip install -r .claude/skills/fi-open-geodata/requirements.txt
+pip install -r skills/fi-open-geodata/requirements.txt
 export NLS_API_KEY=...        # only needed for geocoding and NLS feature queries
 
-cd .claude/skills/fi-open-geodata/scripts
+cd skills/fi-open-geodata/scripts
 python fetch_source.py "https://avoindata.suomi.fi/data/fi/dataset/<slug>" --out work/
 python profile_source.py work/ --report work/report.md
 python transform_source.py work/ --out-dir out/

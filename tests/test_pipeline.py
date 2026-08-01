@@ -17,7 +17,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / ".claude/skills/fi-open-geodata/scripts"
+SCRIPTS = ROOT / "skills/fi-open-geodata/scripts"
 PYTHON = sys.executable
 
 CHECK_CHARS = "0123456789ABCDEFHJKLMNPRSTUVWXY"
