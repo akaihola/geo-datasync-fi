@@ -1,0 +1,65 @@
+{
+  "_comment": "INSPIRE spatial data themes (Directive 2007/2/EC annexes) with the ISO 19115 MD_TopicCategoryCode that INSPIRE Technical Guidance pairs with each. Used by make_metadata.py to fill descriptiveKeywords and topicCategory. Keyword values must be spelled exactly as here, because the INSPIRE validator matches them against the GEMET INSPIRE themes register.",
+  "thesaurus": {
+    "title": "GEMET - INSPIRE themes, version 1.0",
+    "date": "2008-06-01",
+    "date_type": "publication"
+  },
+  "themes": {
+    "Coordinate reference systems": {"annex": 1, "topic": "location"},
+    "Geographical grid systems": {"annex": 1, "topic": "location"},
+    "Geographical names": {"annex": 1, "topic": "location"},
+    "Administrative units": {"annex": 1, "topic": "boundaries"},
+    "Addresses": {"annex": 1, "topic": "location"},
+    "Cadastral parcels": {"annex": 1, "topic": "planningCadastre"},
+    "Transport networks": {"annex": 1, "topic": "transportation"},
+    "Hydrography": {"annex": 1, "topic": "inlandWaters"},
+    "Protected sites": {"annex": 1, "topic": "environment"},
+    "Elevation": {"annex": 2, "topic": "elevation"},
+    "Land cover": {"annex": 2, "topic": "imageryBaseMapsEarthCover"},
+    "Orthoimagery": {"annex": 2, "topic": "imageryBaseMapsEarthCover"},
+    "Geology": {"annex": 2, "topic": "geoscientificInformation"},
+    "Statistical units": {"annex": 3, "topic": "boundaries"},
+    "Buildings": {"annex": 3, "topic": "structure"},
+    "Soil": {"annex": 3, "topic": "geoscientificInformation"},
+    "Land use": {"annex": 3, "topic": "planningCadastre"},
+    "Human health and safety": {"annex": 3, "topic": "health"},
+    "Utility and governmental services": {"annex": 3, "topic": "utilitiesCommunication"},
+    "Environmental monitoring facilities": {"annex": 3, "topic": "environment"},
+    "Production and industrial facilities": {"annex": 3, "topic": "structure"},
+    "Agricultural and aquaculture facilities": {"annex": 3, "topic": "farming"},
+    "Population distribution - demography": {"annex": 3, "topic": "society"},
+    "Area management/restriction/regulation zones and reporting units": {"annex": 3, "topic": "planningCadastre"},
+    "Natural risk zones": {"annex": 3, "topic": "environment"},
+    "Atmospheric conditions": {"annex": 3, "topic": "climatologyMeteorologyAtmosphere"},
+    "Meteorological geographical features": {"annex": 3, "topic": "climatologyMeteorologyAtmosphere"},
+    "Oceanographic geographical features": {"annex": 3, "topic": "oceans"},
+    "Sea regions": {"annex": 3, "topic": "oceans"},
+    "Bio-geographical regions": {"annex": 3, "topic": "biota"},
+    "Habitats and biotopes": {"annex": 3, "topic": "biota"},
+    "Species distribution": {"annex": 3, "topic": "biota"},
+    "Energy resources": {"annex": 3, "topic": "economy"},
+    "Mineral resources": {"annex": 3, "topic": "economy"}
+  },
+  "limitations_on_public_access": {
+    "_comment": "INSPIRE code list for gmd:otherConstraints when describing access limitations. Use noLimitations unless a legal exception under Article 13 genuinely applies.",
+    "register": "http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess",
+    "values": [
+      "noLimitations",
+      "INSPIRE_Directive_Article13_1a",
+      "INSPIRE_Directive_Article13_1b",
+      "INSPIRE_Directive_Article13_1c",
+      "INSPIRE_Directive_Article13_1d",
+      "INSPIRE_Directive_Article13_1e",
+      "INSPIRE_Directive_Article13_1f",
+      "INSPIRE_Directive_Article13_1g",
+      "INSPIRE_Directive_Article13_1h"
+    ]
+  },
+  "common_finnish_licences": {
+    "_comment": "Licences most Finnish publishers use, with the URL to cite in gmd:useConstraints. CC-BY-4.0 is the default for national open data.",
+    "CC-BY-4.0": "https://creativecommons.org/licenses/by/4.0/deed.fi",
+    "CC0-1.0": "https://creativecommons.org/publicdomain/zero/1.0/deed.fi",
+    "CC-BY-SA-4.0": "https://creativecommons.org/licenses/by-sa/4.0/deed.fi"
+  }
+}

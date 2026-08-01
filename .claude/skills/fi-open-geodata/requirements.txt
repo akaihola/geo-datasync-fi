@@ -1,0 +1,10 @@
+# Runtime dependencies for the fi-open-geodata skill.
+# geopandas pulls in shapely, pyogrio and pandas; pyproj is listed explicitly
+# because fi_crs.py and make_metadata.py use it directly.
+geopandas>=1.0
+pyproj>=3.6
+shapely>=2.0
+pandas>=2.0
+requests>=2.31
+# Only needed to read .xlsx/.xls sources.
+openpyxl>=3.1
