@@ -1,5 +1,7 @@
 # geo-datasync-fi
 
+> This is a prototype developed using AI coding agents and not intended for production use.
+
 An agent skill for making Finnish open data spatially interoperable.
 
 It takes a dataset — a link to [avoindata.suomi.fi](https://avoindata.suomi.fi),
